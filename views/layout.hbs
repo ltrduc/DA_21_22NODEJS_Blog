@@ -1,0 +1,382 @@
+{{#if layouts}}
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>World Seed Blog</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  {{!--
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" /> --}}
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300, 400,700|Inconsolata:400,700" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  {{!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"> --}}
+  <link rel="stylesheet" href="css/themify-icons/themify-icons.css">
+  <!-- Theme Style -->
+  {{!--
+  <link rel="stylesheet" href="css/style.css"> --}}
+
+</head>
+
+<body>
+  
+  <div class="wrap">
+    <header role="banner">
+      <div class="top-bar" style="background-color: {{main_color}};">
+        <div class="container">
+          <div class="row">
+            <div class="col-9 social">
+              <a href="#"><span class="fa fa-twitter"></span></a>
+              <a href="#"><span class="fa fa-facebook"></span></a>
+              <a href="#"><span class="fa fa-instagram"></span></a>
+              <a href="#"><span class="fa fa-youtube-play"></span></a>
+            </div>
+            <div class="col-3 search-top">
+              <!-- <a href="#"><span class="fa fa-search"></span></a> -->
+              <form action="#" class="search-top-form">
+                <span class="icon fa fa-search"></span>
+                <input type="text" id="search-box" placeholder="Type keyword to search...">
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container logo-wrap">
+        <div class="row pt-5">
+          <div class="col-12 text-center">
+            <a class="absolute-toggle d-block d-md-none" data-toggle="collapse" href="#navbarMenu" role="button"
+              aria-expanded="false" aria-controls="navbarMenu"><span class="burger-lines"></span></a>
+            <h1 class="site-logo"><a href="/">{{concept}}</a></h1>
+          </div>
+        </div>
+      </div>
+
+      <nav class="navbar navbar-expand-md  navbar-light bg-light">
+        <div class="container">
+
+
+          <div class="collapse navbar-collapse" id="navbarMenu">
+            <ul class="navbar-nav mx-auto">
+              <li class="nav-item">
+                <a class="nav-link active" href="/">Home</a>
+
+              </li>
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="category.html" id="dropdown05" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">Categories</a>
+                <div class="dropdown-menu" aria-labelledby="dropdown05">
+                  <a class="dropdown-item" href="/collections/Life">Lifestyle</a>
+                  <a class="dropdown-item" href="/collections/Business">Business</a>
+                  <a class="dropdown-item" href="/collections/Sport">Sport</a>
+                  <a class="dropdown-item" href="/collections/Food">Food</a>
+                  <a class="dropdown-item" href="/collections/Technology">Technology</a>
+                  <a class="dropdown-item" href="/collections/Travel">Travel</a>
+                  <a class="dropdown-item" href="/collections/Entertainment">Entertainment</a>
+                </div>
+
+              </li>
+              {{#if googleId}}
+
+              {{else}}
+
+              <li class="nav-item">
+                <a class="nav-link" href="/blogs/create">Create Post</a>
+              </li>
+              {{/if}}
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle user" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">
+                  {{username}}
+                </a>
+                
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  {{#if googleId}}
+
+                  {{else}}
+                  {{#if googleId}}
+
+                  {{else}}
+                  <a class="dropdown-item" href="/users/{{slug}}">Thông tin</a>
+                  {{/if}}
+                  {{#if signed}}
+                  <a class="dropdown-item" href="/users/edit">Chỉnh thông tin</a>
+                  <a class="dropdown-item" href="/users/changepassword">Đổi mật khẩu</a>
+                  {{/if}}
+                  {{/if}}
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="/users/login">{{status}}</a>
+                </div>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+      </nav>
+    </header>
+    {{/if}}
+    <link rel="stylesheet" href="css/style.css">
+    {{{body}}}
+
+    {{#if layouts}}
+    <div class="col-md-12 col-lg-4 sidebar">
+      <div class="sidebar-box search-form-wrap">
+        <form action="#" class="search-form">
+          <div class="form-group">
+            {{#if hidebox}}
+            {{else}}
+            <span class="icon fa fa-search"></span>
+            <input type="text" class="form-control" id="s" placeholder="Type a keyword and hit enter">
+            {{/if}}
+          </div>
+        </form>
+      </div>
+      <!-- END sidebar-box -->
+      {{#if hidebox}}
+      {{else}}
+      <div class="sidebar-box">
+        <div class="bio text-center">
+          <img src="/uploads/{{avatar}}" alt="Image Placeholder" class="img-fluid">
+          <div class="bio-body">
+            <h2>{{bloggerName}}</h2>
+            <p>
+              {{#if slides}}
+              {{bloggerBio}}
+              {{else}}
+              {{user_bio}}
+              {{/if}}
+
+            </p>
+            <p><a href="/users/{{bloggerSlug}}" class="btn btn-primary btn-sm rounded"
+                style="background-color: {{main_color}}; border: {{main_color}}">Read my bio</a></p>
+            <p class="social">
+              <a href="#" class="p-2"><span class="fa fa-facebook"></span></a>
+              <a href="#" class="p-2"><span class="fa fa-twitter"></span></a>
+              <a href="#" class="p-2"><span class="fa fa-instagram"></span></a>
+              <a href="#" class="p-2"><span class="fa fa-youtube-play"></span></a>
+            </p>
+          </div>
+        </div>
+      </div>
+      {{/if}}
+      <!-- END sidebar-box -->
+      {{!-- <div class="sidebar-box">
+        <h3 class="heading">Popular Posts</h3>
+        <div class="post-entry-sidebar">
+          <ul>
+            <li>
+              <a href="">
+                <img src="images/img_2.jpg" alt="Image placeholder" class="mr-4">
+                <div class="text">
+                  <h4>How to Find the Video Games of Your Youth</h4>
+                  <div class="post-meta">
+                    <span class="mr-2">March 15, 2018 </span>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <img src="images/img_4.jpg" alt="Image placeholder" class="mr-4">
+                <div class="text">
+                  <h4>How to Find the Video Games of Your Youth</h4>
+                  <div class="post-meta">
+                    <span class="mr-2">March 15, 2018 </span>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <img src="images/img_12.jpg" alt="Image placeholder" class="mr-4">
+                <div class="text">
+                  <h4>How to Find the Video Games of Your Youth</h4>
+                  <div class="post-meta">
+                    <span class="mr-2">March 15, 2018 </span>
+                  </div>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div> --}}
+      <!-- END sidebar-box -->
+      
+      {{#if category}}
+      <div class="sidebar-box">
+        <h3 class="heading">Categories</h3>
+        <ul class="categories">
+          <li><a href="/collections/Life">Lifestyle <span>{{counter.Life}}</span></a></li>
+          <li><a href="/collections/Business">Business <span>{{counter.Business}}</span></a></li>
+          <li><a href="/collections/Sport">Sport <span>{{counter.Sport}}</span></a></li>
+          <li><a href="/collections/Food">Food <span>{{counter.Food}}</span></a></li>
+          <li><a href="/collections/Technology">Technology <span>{{counter.Technology}}</span></a></li>
+          <li><a href="/collections/Travel">Travel <span>{{counter.Travel}}</span></a></li>
+          <li><a href="/collections/Entertainment">Entertainment <span>{{counter.Entertainment}}</span></a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-box">
+        <h3 class="heading">Tags</h3>
+        <ul class="tags">
+          <li><a href="/collections/Travel">Travel</a></li>
+          <li><a href="/collections/Adventure">Adventure</a></li>
+          <li><a href="/collections/Food">Food</a></li>
+          <li><a href="/collections/Life">Lifestyle</a></li>
+          <li><a href="/collections/Business">Business</a></li>
+          <li><a href="/collections/Travel">Travel</a></li>
+          <li><a href="/collections/Food">Food</a></li>
+          <li><a href="/collections/Life">Lifestyle</a></li>
+          <li><a href="/collections/Business">Business</a></li>
+          <li><a href="/collections/Freelancing">Freelancing</a></li>
+        </ul>
+      </div>
+    </div>
+    {{/if}}
+    <!-- END sidebar-box -->
+
+
+    <!-- END sidebar -->
+
+  </div>
+  </div>
+  </section>
+
+  {{#if footer}}
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-md-4">
+          <h3>About Us</h3>
+          <div class="mb-4 text-center">
+            <img width="70%" src="images/Member-img/logo.png" alt="Image placeholder" class="img-fluid">
+          </div>
+          <p>SUD là đội nhóm được tập hợp bởi các sinh viên K24 khoa CNTT Đại học Tôn Đức Thắng... <a href="/team-dev">Read
+              More</a></p>
+
+        </div>
+        <div class="col-md-8 ml-auto">
+          <div class="row">
+            <div class="col-md-7">
+              <h3>Popular Post</h3>
+              <div class="post-entry-sidebar">
+                <ul>
+                  <li>
+                    <a href="/blogs/{{slides.top1.slug}}">
+                      <img src="/uploads/{{slides.top1.image}}" alt="Image placeholder" class="mr-4">
+                      <div class="text">
+                        <h4>{{slides.top1.title}}</h4>
+                        <div class="post-meta">
+                          <span class="mr-2">{{slides.top1.createdAt}} </span> &bullet;
+                          <span class="ml-2"><span class="ti-thumb-up"></span> {{slides.top1.num_likes}}</span>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/blogs/{{slides.top2.slug}}">
+                      <img src="/uploads/{{slides.top2.image}}" alt="Image placeholder" class="mr-4">
+                      <div class="text">
+                        <h4>{{slides.top2.title}}</h4>
+                        <div class="post-meta">
+                          <span class="mr-2">{{slides.top2.createdAt}} </span> &bullet;
+                          <span class="ml-2"><span class="ti-thumb-up"></span> {{slides.top2.num_likes}}</span>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/blogs/{{slides.top3.slug}}">
+                      <img src="/uploads/{{slides.top3.image}}" alt="Image placeholder" class="mr-4">
+                      <div class="text">
+                        <h4>{{slides.top3.title}}</h4>
+                        <div class="post-meta">
+                          <span class="mr-2">{{slides.top3.createdAt}} </span> &bullet;
+                          <span class="ml-2"><span class="ti-thumb-up"></span> {{slides.top3.num_likes}}</span>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-1"></div>
+
+            <div class="col-md-4">
+
+              <div class="mb-5">
+                <h3>Quick Links</h3>
+                <ul class="list-unstyled">
+                  <li><a href="/team-dev">About Us</a></li>
+                  <li><a href="/collections/Life">Lifestyle</a></li>
+                  <li><a href="/collections/Business">Business</a></li>
+                  <li><a href="/collections/Technology">Technology</a></li>
+                  <li><a href="/collections/Entertainment">Entertainment</a></li>
+                </ul>
+              </div>
+
+              <div class="mb-5">
+                <h3>Social</h3>
+                <ul class="list-unstyled footer-social">
+                  <li><a href="#"><span class="fa fa-twitter"></span> Twitter</a></li>
+                  <li><a href="#"><span class="fa fa-facebook"></span> Facebook</a></li>
+                  <li><a href="#"><span class="fa fa-instagram"></span> Instagram</a></li>
+                  <li><a href="#"><span class="fa fa-vimeo"></span> Vimeo</a></li>
+                  <li><a href="#"><span class="fa fa-youtube-play"></span> Youtube</a></li>
+                  <li><a href="#"><span class="fa fa-snapchat"></span> Snapshot</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <p class="small">
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;
+            <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+            <script>document.write(new Date().getFullYear());</script> All Rights Reserved | This website is made with
+            <i class="fa fa-heart text-danger" aria-hidden="true"></i> by <a href="/team-dev" target="_blank">SUD Technology</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  {{/if}}
+  <!-- END footer -->
+
+  </div>
+
+  <div class="d-none">
+    <div id="username-comment">{{username}}</div>
+    <div id="avatar-comment">{{useravatar}}</div>
+  </div>
+
+  <!-- loader -->
+  <div id="loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+      <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+      <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+        stroke="#f4b214" />
+    </svg></div>
+
+  {{/if}}
+
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="js/jquery-migrate-3.0.0.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.waypoints.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
